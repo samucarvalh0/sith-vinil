@@ -8,10 +8,6 @@
 Um e-commerce completo desenvolvido em <strong>PHP</strong>, focado em proporcionar uma experiência moderna para amantes da música e colecionadores de vinis.
 </p>
 
-<img src="./assets/img/banner-github.png" alt="Banner VinilStore" width="100%">
-
-<br>
-
 ![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-orange?style=for-the-badge)
 ![PHP](https://img.shields.io/badge/PHP-8+-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
