@@ -89,14 +89,24 @@ switch ($page) {
         (new PedidoController())->listarAdmin();
         break;
 
+    case 'detalhePed':
+        require "../controllers/PedidoController.php";
+        (new PedidoController())->detalheAdmin($_GET['id'] ?? null);
+        break;
+
+    case 'alterarStatus':
+        require "../controllers/PedidoController.php";
+        (new PedidoController())->alterarStatus();
+        break;
+
+    case 'excluirPedido':
+        require "../controllers/PedidoController.php";
+        (new PedidoController())->excluirAdmin($_GET['id'] ?? null);
+        break;
+
     case 'logout':
         require "../controllers/AdminController.php";
         (new AdminController())->logout();
         break;
-
-    case 'detalhePed':
-    require "../controllers/PedidoController.php";
-    (new PedidoController())->detalhe($_GET['id'] ?? null);
-    break;
 }
 ?>

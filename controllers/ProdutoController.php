@@ -58,11 +58,31 @@ class ProdutoController
     }
 
     public function listar()
-    {
-        $produtos = $this->produto->listar();
+{
+    require_once __DIR__ . "/../models/Categoria.php";
 
-        require "views/default/catalogo.php";
-    }
+    $categoriaModel = new Categoria();
+
+    $categorias = $categoriaModel->listar();
+
+    $filtros = [
+
+        'busca' => $_GET['busca'] ?? '',
+
+        'artista' => $_GET['artista'] ?? '',
+
+        'categoria' => $_GET['categoria'] ?? '',
+
+        'preco' => $_GET['preco'] ?? '',
+
+        'ordem' => $_GET['ordem'] ?? ''
+
+    ];
+
+    $produtos = $this->produto->listar($filtros);
+
+    require "views/default/catalogo.php";
+}
 
     public function listarAdmin()
     {

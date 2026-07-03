@@ -1,6 +1,5 @@
-<?php require "views/default/include/header.php"; ?>
-
-<?php require "views/default/include/navbar.php"; ?>
+<?php require_once __DIR__ . "/include/header.php"; ?>
+<?php require_once __DIR__ . "/include/navbar.php"; ?>
 
 <main class="py-5">
     <div class="container">
@@ -32,4 +31,4 @@
     </div>
 </main>
 
-<?php require "views/default/include/footer.php"; ?>
+<?php require_once __DIR__ . "/include/footer.php"; ?>

@@ -3,21 +3,97 @@
 class Produto
 {
 
-    public function listar()
+    public function listar($filtros = [])
     {
         global $conn;
 
-        $sql = "SELECT p.*, c.nome AS categoria_nome FROM produtos p
-                LEFT JOIN categorias c ON p.id_categorias = c.id
-                ORDER BY p.titulo ASC";
+        $sql = "SELECT
+                p.*,
+                c.nome AS id_categorias
+            FROM produtos p
+            LEFT JOIN categorias c
+                ON c.id = p.id_categorias
+            WHERE p.estoque > 0";
 
-        $result = $conn->query($sql);
+        $parametros = [];
+        $tipos = "";
 
-        if ($result->num_rows > 0) {
-            return $result->fetch_all(MYSQLI_ASSOC);
+
+        if (!empty($filtros['busca'])) {
+
+            $sql .= " AND p.titulo LIKE ?";
+
+            $parametros[] = "%" . $filtros['busca'] . "%";
+
+            $tipos .= "s";
         }
 
-        return [];
+        if (!empty($filtros['artista'])) {
+
+            $sql .= " AND p.artista LIKE ?";
+
+            $parametros[] = "%" . $filtros['artista'] . "%";
+
+            $tipos .= "s";
+        }
+
+        if (!empty($filtros['categoria'])) {
+
+            $sql .= " AND p.id_categorias = ?";
+
+            $parametros[] = $filtros['categoria'];
+
+            $tipos .= "i";
+        }
+
+
+        if (!empty($filtros['preco'])) {
+
+            $sql .= " AND p.preco <= ?";
+
+            $parametros[] = $filtros['preco'];
+
+            $tipos .= "d";
+        }
+
+
+        switch ($filtros['ordem'] ?? '') {
+
+            case 'menor':
+                $sql .= " ORDER BY p.preco ASC";
+                break;
+
+            case 'maior':
+                $sql .= " ORDER BY p.preco DESC";
+                break;
+
+            case 'az':
+                $sql .= " ORDER BY p.titulo ASC";
+                break;
+
+            case 'za':
+                $sql .= " ORDER BY p.titulo DESC";
+                break;
+
+            default:
+                $sql .= " ORDER BY p.titulo ASC";
+                break;
+
+        }
+
+        $stmt = $conn->prepare($sql);
+
+        if (!empty($parametros)) {
+
+            $stmt->bind_param($tipos, ...$parametros);
+
+        }
+
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
     public function buscarPorId($id)

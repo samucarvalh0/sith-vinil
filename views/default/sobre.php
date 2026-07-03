@@ -9,7 +9,7 @@
                 <h1 class="mb-4">Sobre a VinilStore</h1>
 
                 <h3>Nossa História</h3>
-                <p>A VinilStore nasceu em 2020 com a missão de resgatar e popularizar a cultura de discos de vinil. 
+                <p>A Sinth-Vinil nasceu em 2020 com a missão de resgatar e popularizar a cultura de discos de vinil. 
                 Começamos como uma pequena loja física em São Paulo e evoluímos para uma plataforma online que atende 
                 clientes de todo o Brasil.</p>
 
@@ -17,7 +17,7 @@
                 <p>Preservar a arte dos vinis, oferecendo a melhor qualidade e os melhores preços do mercado. 
                 Acreditamos que a música impressa em vinil é uma experiência única e inesquecível.</p>
 
-                <h3 class="mt-4">Por que escolher a VinilStore?</h3>
+                <h3 class="mt-4">Por que escolher a Sinth-Vinil?</h3>
                 <ul>
                     <li><strong>Qualidade Garantida</strong> - Todos os produtos passam por rigorosa seleção</li>
                     <li><strong>Preços Competitivos</strong> - Os melhores preços do mercado</li>
@@ -33,7 +33,7 @@
                 </p>
                 <p>
                     <i class="bi bi-envelope me-2"></i>
-                    <strong>contato@vinilstore.com.br</strong>
+                    <strong>contato@sinthvinil.com.br</strong>
                 </p>
             </div>
 

@@ -61,29 +61,7 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title"><i class="bi bi-envelope me-2"></i>Email</h5>
-                        <p class="card-text">contato@vinilstore.com.br</p>
-                    </div>
-                </div>
-
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="bi bi-geo-alt me-2"></i>Endereço</h5>
-                        <p class="card-text">
-                            Rua das Flores, 123<br>
-                            São Paulo - SP<br>
-                            CEP: 01234-567
-                        </p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="bi bi-clock me-2"></i>Horário de Atendimento</h5>
-                        <p class="card-text">
-                            Segunda a Sexta: 08:00 - 18:00<br>
-                            Sábado: 09:00 - 14:00<br>
-                            Domingo: Fechado
-                        </p>
+                        <p class="card-text">contato@sinthvinil.com.br</p>
                     </div>
                 </div>
             </div>

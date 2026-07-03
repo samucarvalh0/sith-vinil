@@ -1,8 +1,9 @@
-<?php require __DIR__ . "/include/sidebar.php"; ?>
-<?php require __DIR__ . "/include/header.php"; ?>
+<?php require "views/default/include/header.php"; ?>
 
-<div class="main-content">
-    <div class="container-fluid">
+<?php require "views/default/include/navbar.php"; ?>
+
+<main class="py-5">
+    <div class="container">
 
         <div class="d-flex justify-content-between align-items-center mb-4">
 
@@ -10,7 +11,7 @@
                 Pedido #<?= $pedido['id'] ?>
             </h2>
 
-            <a href="?page=admin-pedidos" class="btn btn-secondary">
+            <a href="?page=meus-pedidos" class="btn btn-secondary">
                 <i class="bi bi-arrow-left"></i>
                 Voltar
             </a>
@@ -70,7 +71,6 @@
                                             ?>
 
                                             <tr>
-
 
                                                 <td>
 
@@ -159,38 +159,6 @@
 
                         <div class="card-body">
 
-                            <div class="mb-3">
-
-                                <label class="form-label fw-bold">
-                                    Status do Pedido
-                                </label>
-
-                                <select name="status" class="form-select">
-
-                                    <option value="pendente" <?= $pedido['status'] == 'pendente' ? 'selected' : '' ?>>
-                                        Pendente
-                                    </option>
-
-                                    <option value="processando" <?= $pedido['status'] == 'processando' ? 'selected' : '' ?>
-                                        >
-                                        Processando
-                                    </option>
-
-                                    <option value="enviado" <?= $pedido['status'] == 'enviado' ? 'selected' : '' ?>>
-                                        Enviado
-                                    </option>
-
-                                    <option value="entregue" <?= $pedido['status'] == 'entregue' ? 'selected' : '' ?>>
-                                        Entregue
-                                    </option>
-
-                                    <option value="cancelado" <?= $pedido['status'] == 'cancelado' ? 'selected' : '' ?>>
-                                        Cancelado
-                                    </option>
-
-                                </select>
-
-                            </div>
 
                             <div class="d-flex justify-content-between border-top pt-2">
 
@@ -206,25 +174,19 @@
                                 </strong>
 
                             </div>
+                            <?php if ($pedido['status'] == 'pendente'): ?>
 
-                            <button class="btn btn-primary w-100 mt-4">
+                                <a href="?page=cancelar-pedido&id=<?= $pedido['id'] ?>" class="btn btn-danger mt-3"
+                                    onclick="return confirm('Deseja realmente cancelar este pedido?');">
 
-                                <i class="bi bi-save"></i>
+                                    <i class="bi bi-x-circle"></i>
+                                    Cancelar Pedido
 
-                                Salvar Alterações
+                                </a>
 
-                            </button>
-
-                            <a href="?page=excluirPedido&id=<?= $pedido['id'] ?>" class="btn btn-danger w-100 mt-2"
-                                onclick="return confirm('Deseja realmente excluir este pedido?')">
-
-                                <i class="bi bi-trash"></i>
-
-                                Excluir Pedido
-
-                            </a>
-
+                            <?php endif; ?>
                         </div>
+
 
                     </div>
 
@@ -353,4 +315,4 @@
 
     </div>
 
-</div>
+</main>

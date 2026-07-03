@@ -1,20 +1,36 @@
 <?php require "views/default/include/header.php"; ?>
-
 <?php require "views/default/include/navbar.php"; ?>
 
 <main>
-    <!-- Hero Section -->
-    <section class="bg-dark text-white py-5">
-        <div class="container text-center">
-            <h1 class="display-4 fw-bold mb-4">Bem-vindo à VinilStore</h1>
-            <p class="lead mb-4">A maior coleção de vinis raros e clássicos do Brasil</p>
-            <a href="?page=catalogo" class="btn btn-primary btn-lg">
-                <i class="bi bi-music-note-beamed me-2"></i>Explorar Catálogo
-            </a>
-        </div>
-    </section>
 
-    <!-- Featured Products -->
+<section class="hero-banner">
+
+    <div class="hero-overlay">
+
+        <div class="container text-center">
+
+            <h1 class="display-3 fw-bold mb-3">
+                Bem-vindo à Sinth-Vinil
+            </h1>
+
+            <p class="lead mb-4">
+                Descubra discos clássicos, edições limitadas e os maiores sucessos do vinil.
+            </p>
+
+            <a href="?page=catalogo" class="btn btn-primary btn-lg px-5">
+
+                <i class="bi bi-music-note-beamed me-2"></i>
+
+                Explorar Catálogo
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
     <section class="py-5">
         <div class="container">
             <h2 class="mb-4">Produtos em Destaque</h2>
@@ -70,7 +86,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="bg-light py-5">
         <div class="container">
             <div class="row">

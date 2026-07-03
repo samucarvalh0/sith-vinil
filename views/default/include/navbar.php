@@ -7,56 +7,38 @@
             Sinth-vinil
         </a>
 
-        <form class="d-flex d-lg-none mx-auto w-50">
-            <input class="form-control form-control-sm" type="search" placeholder="Pesquisar...">
-        </form>
+        <!-- Ícones da direita (sempre visíveis) -->
+        <div class="d-flex align-items-center order-lg-3 ms-auto">
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPrincipal">
+            <a href="?page=carrinho" class="text-white text-decoration-none position-relative me-3">
 
-            <span class="navbar-toggler-icon"></span>
+                <i class="bi bi-cart3 fs-3"></i>
 
-        </button>
+                <?php
+                $quantidade = 0;
 
-        <div class="collapse navbar-collapse" id="navbarPrincipal">
+                if (!empty($_SESSION['carrinho'])) {
+                    foreach ($_SESSION['carrinho'] as $item) {
+                        $quantidade += $item['quantidade'];
+                    }
+                }
 
-            <!-- Menu -->
-            <ul class="navbar-nav mx-auto text-center">
+                if ($quantidade > 0):
+                    ?>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="?page=catalogo">
-                        Catálogo
-                    </a>
-                </li>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        <?= $quantidade ?>
+                    </span>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="?page=sobre">
-                        Sobre
-                    </a>
-                </li>
+                <?php endif; ?>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="?page=contato">
-                        Contato
-                    </a>
-                </li>
+            </a>
 
-            </ul>
+            <div class="dropdown">
 
-            <form class="d-none d-lg-flex ms-lg-3">
+                <a class="text-white text-decoration-none" href="#" role="button" data-bs-toggle="dropdown">
 
-                <input class="form-control me-2" type="search" placeholder="Pesquisar...">
-
-                <button class="btn btn-outline-light">
-                    Buscar
-                </button>
-
-            </form>
-            <div class="dropdown ms-3">
-
-                <a class="text-white h3 text-decoration-none" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-
-                    <i class="bi bi-person-circle"></i>
+                    <i class="bi bi-person-circle fs-2"></i>
 
                 </a>
 
@@ -83,7 +65,7 @@
                         <li>
                             <span class="dropdown-item-text">
                                 Olá,
-                                <strong><?= $_SESSION['usuario']['nome'] ?></strong>
+                                <strong><?= htmlspecialchars($_SESSION['usuario']['nome']) ?></strong>
                             </span>
                         </li>
 
@@ -110,6 +92,33 @@
                 </ul>
 
             </div>
+
+        </div>
+
+        <button class="navbar-toggler order-lg-2 ms-3" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarPrincipal">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center order-lg-2" id="navbarPrincipal">
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="?page=catalogo">Catálogo</a>
+                </li>
+
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="?page=sobre">Sobre</a>
+                </li>
+
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="?page=contato">Contato</a>
+                </li>
+
+            </ul>
 
         </div>
 

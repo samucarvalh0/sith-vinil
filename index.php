@@ -104,13 +104,19 @@ switch ($page) {
         (new HomeController())->contato();
         break;
 
-    case 'enviar-contato':
-        require_once "controllers/HomeController.php";
-        (new HomeController())->enviarContato();
+    case 'confirmacao':
+        require_once "controllers/PedidoController.php";
+        (new PedidoController())->confirmacao();
+        break;
+
+    case 'cancelar-pedido':
+        require_once "controllers/PedidoController.php";
+        (new PedidoController())->cancelar($_GET['id'] ?? null);
         break;
 
     default:
         http_response_code(404);
         echo "Página não encontrada.";
+
 }
 ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02/07/2026 às 23:29
+-- Tempo de geração: 03/07/2026 às 20:42
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -74,6 +74,14 @@ CREATE TABLE `clientes` (
   `endereco` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `clientes`
+--
+
+INSERT INTO `clientes` (`id`, `nome`, `email`, `telefone`, `senha`, `endereco`) VALUES
+(3, 'teste', 'teste@gmail.com', '1212', '$2y$10$EFHQ20Mj/RLaGtLcosBlYeEmCSNRh4pZa7z8lH4DVO7JQTzPhJqMy', 'xx'),
+(4, 'teste2', 'teste2@gmail.com', '121212', '$2y$10$0SW.wwS7nOYlviWJv.431.VpOuvXMnLyyMkNOSGNHY9s757jvaeLC', 'asdasda');
+
 -- --------------------------------------------------------
 
 --
@@ -125,7 +133,7 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id`, `id_categorias`, `titulo`, `artista`, `ano`, `preco`, `estoque`, `descricao`, `imagem`) VALUES
-(2, 1, 'testezinho', 'teste', '2026', 12.00, 1, 'teste', '');
+(2, 1, 'testezinho', 'teste', '2026', 12.00, 1, 'teste', 'uploads/prod_6a47ab4cf26a69.87508136.jpeg');
 
 --
 -- Índices para tabelas despejadas
@@ -187,19 +195,19 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de tabela `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `itens_pedido`
 --
 ALTER TABLE `itens_pedido`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
