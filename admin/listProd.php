@@ -38,7 +38,7 @@
                                         <td><?= $produto['titulo'] ?></td>
                                         <td><?= $produto['artista'] ?? 'N/A' ?></td>
                                         <td><?= $produto['ano'] ?? 'N/A' ?></td>
-                                        <td><?= $produto['categoria_nome'] ?? 'N/A' ?></td>
+                                        <td><?= $produto['id_categorias'] ?? 'N/A' ?></td>
                                         <td>R$ <?= number_format($produto['preco'], 2, ',', '.') ?></td>
                                         <td><span class="badge bg-info"><?= $produto['estoque'] ?></span></td>
                                         <td>

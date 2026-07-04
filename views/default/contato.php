@@ -3,7 +3,7 @@
 <?php require "views/default/include/navbar.php"; ?>
 
 <main class="py-5">
-    <div class="container">
+    <div class="container bg-dark p-4 rounded shadow-sm">
         <h1 class="mb-4">Fale Conosco</h1>
 
         <div class="row">

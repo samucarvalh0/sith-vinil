@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$database = "vinilstore";
+$database = "sinth_vinil";
 
 $conn = new mysqli($host, $user, $password, $database);
 

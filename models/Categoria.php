@@ -53,12 +53,11 @@ class Categoria
         global $conn;
 
         $nome = $dados['nome'] ?? '';
-        $descricao = $dados['descricao'] ?? '';
 
-        $sql = "INSERT INTO categorias (nome, descricao) VALUES (?, ?)";
+        $sql = "INSERT INTO categorias (nome) VALUES (?)";
 
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $nome, $descricao);
+        $stmt->bind_param("s", $nome);
 
         return $stmt->execute();
     }

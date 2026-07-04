@@ -1,16 +1,14 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3">
 
     <div class="container">
 
-        <!-- Logo -->
         <a class="navbar-brand" href="?page=home">
             Sinth-vinil
         </a>
 
-        <!-- Ícones da direita (sempre visíveis) -->
         <div class="d-flex align-items-center order-lg-3 ms-auto">
 
-            <a href="?page=carrinho" class="text-white text-decoration-none position-relative me-3">
+            <a href="?page=carrinho" class="text-decoration-none position-relative me-3">
 
                 <i class="bi bi-cart3 fs-3"></i>
 
@@ -36,7 +34,7 @@
 
             <div class="dropdown">
 
-                <a class="text-white text-decoration-none" href="#" role="button" data-bs-toggle="dropdown">
+                <a class="text-decoration-none" href="#" role="button" data-bs-toggle="dropdown">
 
                     <i class="bi bi-person-circle fs-2"></i>
 
@@ -65,7 +63,7 @@
                         <li>
                             <span class="dropdown-item-text">
                                 Olá,
-                                <strong><?= htmlspecialchars($_SESSION['usuario']['nome']) ?></strong>
+                                <?= htmlspecialchars($_SESSION['usuario']['nome']) ?>
                             </span>
                         </li>
 
@@ -83,7 +81,7 @@
                         <li>
                             <a class="dropdown-item text-danger" href="?page=logout">
                                 <i class="bi bi-box-arrow-right me-2"></i>
-                                Sair
+                                <strong>Sair</strong>
                             </a>
                         </li>
 

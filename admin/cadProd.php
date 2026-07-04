@@ -1,6 +1,8 @@
 <?php require __DIR__ . "/include/sidebar.php"; ?>
 <?php require __DIR__ . "/include/header.php"; ?>
 
+
+
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
@@ -91,7 +93,7 @@
     </div>
 </div>
 
-<!-- Modal para criar categoria -->
+
 <div class="modal fade" id="modalNovaCategoria" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -104,10 +106,6 @@
                     <div class="mb-3">
                         <label class="form-label">Nome da Categoria</label>
                         <input type="text" name="nome" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Descrição</label>
-                        <textarea name="descricao" class="form-control" rows="3"></textarea>
                     </div>
                 </form>
             </div>
@@ -125,27 +123,24 @@
 <script>
     document.getElementById('btnSalvarCategoria').addEventListener('click', function () {
         const nome = document.querySelector('#formNovaCategoria input[name="nome"]').value;
-        const descricao = document.querySelector('#formNovaCategoria textarea[name="descricao"]').value;
 
         if (!nome.trim()) {
             alert('Digite o nome da categoria');
             return;
         }
 
-        // Enviar dados via AJAX com header X-Requested-With
         fetch('?page=salvarCat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'X-Requested-With': 'XMLHttpRequest'
             },
-            body: 'nome=' + encodeURIComponent(nome) + '&descricao=' + encodeURIComponent(descricao)
+            body: 'nome=' + encodeURIComponent(nome)
         })
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
                     alert('Categoria criada com sucesso!');
-                    // Recarregar a página para listar a nova categoria
                     location.reload();
                 } else {
                     alert('Erro ao salvar categoria');

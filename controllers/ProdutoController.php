@@ -28,7 +28,7 @@ class ProdutoController
             return $categoriaExistente['id'];
         }
 
-        $categoria->cadastrar(['nome' => $categoriaNome, 'descricao' => '']);
+        $categoria->cadastrar(['nome' => $categoriaNome]);
         $novaCategoria = $categoria->buscarPorNome($categoriaNome);
 
         return $novaCategoria['id'] ?? 0;

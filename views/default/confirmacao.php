@@ -9,7 +9,7 @@
                     <i class="bi bi-check-circle text-success" style="font-size: 5rem;"></i>
                 </div>
                 <h1 class="mb-3">Pedido Confirmado!</h1>
-                <p class="lead text-muted mb-4">
+                <p class="lead mb-4">
                     Seu pedido foi realizado com sucesso. Você receberá uma confirmação por email.
                 </p>
 

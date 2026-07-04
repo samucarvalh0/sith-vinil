@@ -18,8 +18,8 @@
                             </div>
 
                             <div class="mb-3">
-                                <label class="form-label">Categoria</label>
-                                <input type="text" name="categoria_nome" list="categorias-list" class="form-control" required placeholder="Digite ou selecione uma categoria" value="<?= htmlspecialchars($produto['categoria_nome'] ?? '') ?>">
+                                <input type="text" name="categoria_nome" list="categorias-list" class="form-control"
+                                    required placeholder="Digite ou selecione uma categoria">
                                 <datalist id="categorias-list">
                                     <?php if (!empty($categorias)): ?>
                                         <?php foreach ($categorias as $cat): ?>
@@ -85,3 +85,62 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="modalNovaCategoria" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Criar Nova Categoria</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formNovaCategoria">
+                    <div class="mb-3">
+                        <label class="form-label">Nome da Categoria</label>
+                        <input type="text" name="nome" class="form-control" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="btnSalvarCategoria">
+                    <i class="bi bi-check-circle me-2"></i>Salvar Categoria
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById('btnSalvarCategoria').addEventListener('click', function () {
+        const nome = document.querySelector('#formNovaCategoria input[name="nome"]').value;
+
+        if (!nome.trim()) {
+            alert('Digite o nome da categoria');
+            return;
+        }
+
+        fetch('?page=salvarCat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            body: 'nome=' + encodeURIComponent(nome)
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Categoria criada com sucesso!');
+                    location.reload();
+                } else {
+                    alert('Erro ao salvar categoria');
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Erro ao salvar categoria');
+            });
+    });
+</script>

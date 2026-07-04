@@ -5,8 +5,8 @@
 <main class="py-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
-                <h1 class="mb-4">Sobre a VinilStore</h1>
+            <div class="col-md-8 bg-dark p-4 rounded shadow-sm">
+                <h1 class="mb-4">Sobre a Sinth-Vinil</h1>
 
                 <h3>Nossa História</h3>
                 <p>A Sinth-Vinil nasceu em 2020 com a missão de resgatar e popularizar a cultura de discos de vinil. 

@@ -8,8 +8,6 @@
 
         <div class="row">
 
-            <!-- SIDEBAR -->
-
             <div class="col-lg-3 col-xl-2 mb-4">
 
                 <div class="card shadow-sm sticky-top" style="top:20px;">
@@ -155,9 +153,8 @@
 
             </div>
 
-            <!-- PRODUTOS -->
 
-            <div class="col-lg-9 col-xl-10">
+            <div class="col-lg-9 col-xl-10 bg-dark p-4 rounded shadow-sm">
 
                 <div class="d-flex justify-content-between align-items-center mb-4">
 
@@ -169,7 +166,7 @@
 
                         </h2>
 
-                        <p class="text-muted mb-0">
+                        <p class="mb-0">
 
                             <?= count($produtos) ?> produto(s) encontrado(s)
 
@@ -197,7 +194,7 @@
 
                     <?php foreach ($produtos as $produto): ?>
 
-                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="col-6 col-md-6 col-lg-4 col-xl-3 mb-4">
 
                             <div class="card h-100 shadow-sm">
 
@@ -233,7 +230,7 @@
 
                                     <small class="text-secondary">
 
-                                        <?= htmlspecialchars($produto['categoria_nome']) ?>
+                                        <?= htmlspecialchars($produto['id_categorias']) ?>
 
                                     </small>
 
